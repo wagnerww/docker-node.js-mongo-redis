@@ -1,0 +1,22 @@
+{
+  "name": "docker-redis-mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "persistencia": "nodemon src/jobs/persistencia.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "kue": "^0.11.6",
+    "mongoose": "^5.4.9",
+    "nodemon": "^1.18.9",
+    "redis": "^2.8.0"
+  }
+}
