@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/app.js",
-    "persistencia": "nodemon src/jobs/persistencia.js",
+    "start": "pm2 start src/app.js",
+    "persistencia": "pm2 start src/jobs/persistencia.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

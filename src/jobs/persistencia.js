@@ -1,14 +1,19 @@
 const redis = require('../conf/redis');
-const mongo = require('../conf/db');
+const emailModel = require('../Models/emailModel');
 
 persistir = async () => {
 
-    let arrValues = [];
-
     await redis.smembers("sendEmail", function (err, values) {
+        console.log('valores', values)
         if (!err)
-            arrValues = arrValues.concat(values);
-            console.log('value', arrValues)
+            for (i in values) {
+                let value = values[i];
+                let email = JSON.parse(value);
+                console.log('óbjeto',email)
+                emailModel.create(email);
+
+                redis.SREM("sendEmail", value)
+            }
     });
 }
 

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const host = "mongo";
 const port = "27017";
 
-mongoose.connect(`mongodb://${host}:${port}`);
+mongoose.connect(`mongodb://${host}:${port}/email`);
 
 mongoose.connection.on('connected', function(){
     console.log("==> conexão com o MONGO OK!");

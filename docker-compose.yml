@@ -23,7 +23,7 @@ services:
       - redis
     
   mongo:
-    container_name: mongoDB
+    container_name: mongoDB_dev
     image: mongo
     volumes:
       - ./data:/data/db
