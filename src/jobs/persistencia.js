@@ -4,7 +4,7 @@ const schedule  = require('node-schedule');
 
 let exec = 0;
 const segundosExec = 2;
-/*persistir = async () => {
+persistir = async () => {
 
     await redis.smembers("sendEmail", function (err, values) {
         console.log('valores', values)
@@ -18,10 +18,10 @@ const segundosExec = 2;
                 redis.SREM("sendEmail", value)
             }
     });
-}*/
+}
 
-const job = schedule.scheduleJob('0-59/5 * * * * *', async () => {
+const job = schedule.scheduleJob('0-59/5 * * * * *', async (date) => {
    exec += 1;
-   await console.log(`execução número ${exec}, tempo:${segundosExec * exec}`);
+   await console.log(`execução número:${exec}, tempo decorrido:${segundosExec * exec}, hora:${date}`);
 });
 //setInterval(persistir, 5000);
