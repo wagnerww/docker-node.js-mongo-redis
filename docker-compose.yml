@@ -21,7 +21,7 @@ services:
       - .:/usr/app
     links:
       - redis
-    
+
   mongo:
     container_name: mongoDB_dev
     image: mongo
@@ -31,7 +31,7 @@ services:
       - "27017:27017"
 
   redis:
-    container_name: redis
+    container_name: redis_dev
     image: redis
     volumes:
       - ./data:/redis/db
